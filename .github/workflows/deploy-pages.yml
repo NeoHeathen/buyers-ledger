@@ -1,8 +1,9 @@
-name: Deploy Buyer’s Ledger
+name: Deploy Buyer’s Ledger to GitHub Pages (manual fallback)
 
+# Production is served through the connected Systeme.io funnel at
+# https://www.buyersledger.com/. Keep this workflow only as a manual fallback
+# so pushes do not fail while GitHub Pages is not enabled for this repository.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
