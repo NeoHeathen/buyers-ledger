@@ -1,5 +1,4 @@
 import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { publishedReviews } from "./data/reviewCatalog";
 import AffiliateDisclosure from "./pages/AffiliateDisclosure";
@@ -45,11 +44,9 @@ function Router() {
 
 function App() {
   return (
-    <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
-        <Router />
-      </ThemeProvider>
-    </ErrorBoundary>
+    <ThemeProvider defaultTheme="light">
+      <Router />
+    </ThemeProvider>
   );
 }
 
