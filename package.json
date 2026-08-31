@@ -1,0 +1,9 @@
+{
+  "name":"buyers-ledger",
+  "version":"1.0.0",
+  "private":true,
+  "type":"module",
+  "scripts":{"build":"vite build"},
+  "dependencies":{"lucide-react":"^0.453.0","react":"^19.2.1","react-dom":"^19.2.1","wouter":"^3.3.5"},
+  "devDependencies":{"@vitejs/plugin-react":"^5.0.4","vite":"^7.1.7","typescript":"5.9.3"}
+}
