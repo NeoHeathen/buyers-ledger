@@ -1,7 +1,7 @@
 /**
  * Signal Field Guide design: a disclosure-forward editorial landing page.
  * Uses warm paper, charcoal space, Signal Orange (#F05A28), DM Serif Display, and Manrope.
- * Product purchases happen only on third-party provider or retailer websites.
+ * The sole conversion destination is intentionally centralized in AFFILIATE_URL for easy replacement.
  */
 import { useState } from "react";
 import {
@@ -35,9 +35,9 @@ const editorialStandards = [
 ];
 
 const faqs = [
-  { question: "Is this the official product website?", answer: "No. The Buyer’s Ledger is an independent affiliate buyer’s guide. It does not sell products or operate a checkout. Any purchase happens on the relevant third-party provider or retailer website, which is responsible for pricing, payment, terms, delivery, and support." },
+  { question: "Is this the official product website?", answer: "No. The Buyer’s Ledger is an independent affiliate buyer’s guide. It may refer to third-party offers, but each provider is responsible for its offer, checkout, terms, delivery, and support." },
   { question: "Will the price or terms be current here?", answer: "Always rely on the provider’s official page for current pricing, product scope, availability, guarantees, and terms. Those details can change after this page is published." },
-  { question: "How is this page supported?", answer: "If you use a qualifying affiliate link and make a purchase on a third-party website, The Buyer’s Ledger may receive a commission at no additional cost to you. This does not change the price you see from the provider." },
+  { question: "How is this page supported?", answer: "If you use a qualifying affiliate link and make a purchase, The Buyer’s Ledger may receive a commission at no additional cost to you. This does not change the price you see from the provider." },
 ];
 
 export default function Home() {
@@ -74,7 +74,7 @@ export default function Home() {
             <a className="button button-primary" href="#review-catalog">Browse buyer guides <ArrowUpRight size={18} /></a>
             <a className="text-link" href="#review-catalog">See all buyer guides <ArrowDownRight size={17} /></a>
           </div>
-          <p className="disclosure hero-disclosure">Affiliate disclosure: individual buyer guides may contain affiliate links. If you make a qualifying purchase on the linked third-party website, The Buyer’s Ledger may earn a commission at no added cost to you.</p>
+          <p className="disclosure hero-disclosure">Affiliate disclosure: individual buyer guides may contain affiliate links. If you make a qualifying purchase through one, The Buyer’s Ledger may earn a commission at no added cost to you.</p>
         </div>
         <aside className="hero-aside reveal reveal-delay" aria-label="How to use this buyer’s guide">
           <div className="aside-topline"><span>Buyer’s brief</span><span>01—10</span></div>
@@ -86,7 +86,7 @@ export default function Home() {
 
       <section className="landing-review-catalog section" id="review-catalog">
         <div className="section-index"><span>01</span><span>BUYER GUIDES</span></div>
-        <div className="landing-catalog-heading reveal"><h2>Choose a buyer’s guide.</h2><p>Every published Buyer’s Ledger guide is below. A provider link is shown only when a specific third-party destination has been verified and can be clearly disclosed.</p></div>
+        <div className="landing-catalog-heading reveal"><h2>Choose a buyer’s guide.</h2><p>Every published Buyer’s Ledger guide is below. Cards marked <strong>Provider link available</strong> lead to a product-specific guide with a clearly disclosed official-provider CTA.</p></div>
         <div className="landing-catalog-grid">
           {publishedReviews.map((review, index) => (
             <a className={`landing-catalog-card reveal ${review.affiliateAvailable ? "has-affiliate-route" : ""} ${index % 3 === 1 ? "reveal-delay" : index % 3 === 2 ? "reveal-delay-2" : ""}`} href={review.href} key={review.number}>
@@ -102,7 +102,7 @@ export default function Home() {
       <section className="overview section" id="overview">
         <div className="section-index"><span>02</span><span>THE BUYER’S STANDARD</span></div>
         <div className="overview-intro reveal"><p className="kicker">An elite buyer’s filter</p><h2>Not a verdict.<br />A sharper starting point.</h2></div>
-        <div className="overview-panel reveal reveal-delay"><p>The Buyer’s Ledger does not sell the products it covers or process product payments. It creates a clearer path to the provider’s current information so readers can decide what deserves further attention before buying from that provider.</p><div className="checklist" aria-label="Details to review on the official page">{reviewPoints.map((point) => <div className="check-row" key={point}><Check size={16} strokeWidth={2.2} /><span>{point}</span></div>)}</div><a className="inline-cta" href="#review-catalog">Open the buyer’s guide shelf <ExternalLink size={16} /></a></div>
+        <div className="overview-panel reveal reveal-delay"><p>The Buyer’s Ledger does not sell the products it covers. It creates a clearer path to the provider’s current information so readers can decide what deserves further attention before buying.</p><div className="checklist" aria-label="Details to review on the official page">{reviewPoints.map((point) => <div className="check-row" key={point}><Check size={16} strokeWidth={2.2} /><span>{point}</span></div>)}</div><a className="inline-cta" href="#review-catalog">Open the buyer’s guide shelf <ExternalLink size={16} /></a></div>
       </section>
 
       <section className="editorial-ledger section" id="editorial-standard">
@@ -134,7 +134,7 @@ export default function Home() {
 
       <footer className="footer">
         <div className="footer-brand"><a className="brand" href="#top" aria-label="Back to top"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span><span className="brand-name">THE BUYER’S <sup>LEDGER</sup></span></a><p>Independent affiliate buyer’s guide.</p><a className="footer-upcoming-link" href="#review-catalog">All published buyer’s guides <ArrowUpRight size={14} /></a></div>
-        <div className="footer-legal"><p><strong>Affiliate disclosure.</strong> This site may earn a commission if you purchase through a qualifying affiliate link on a third-party website. The Buyer’s Ledger does not sell products or process payments.</p><p>© {new Date().getFullYear()} The Buyer’s Ledger. This site is independent and is not affiliated with, endorsed by, or operated by the product providers it covers.</p><nav className="footer-legal-links" aria-label="Legal navigation"><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a><a href="/affiliate-disclosure">Affiliate disclosure</a></nav></div>
+        <div className="footer-legal"><p><strong>Affiliate disclosure.</strong> This site may earn a commission if you purchase through its qualifying affiliate links. Always review the provider’s latest terms and policies before purchasing.</p><p>© {new Date().getFullYear()} The Buyer’s Ledger. This site is independent and is not affiliated with, endorsed by, or operated by the product providers it covers.</p><nav className="footer-legal-links" aria-label="Legal navigation"><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a><a href="/affiliate-disclosure">Affiliate disclosure</a></nav></div>
       </footer>
     </main>
   );
